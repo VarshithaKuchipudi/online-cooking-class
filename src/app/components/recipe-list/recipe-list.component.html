@@ -1,0 +1,11 @@
+<section>
+    <h2>Community Recipes</h2>
+    <div class="recipe" *ngFor="let recipe of recipes">
+      <h3>{{ recipe.title }}</h3>
+      <p><strong>By:</strong> {{ recipe.submittedBy }}</p>
+      <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+      <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+      <small *ngIf="recipe.createdAt">Added on: {{ recipe.createdAt | date }}</small>
+    </div>
+    <p *ngIf="recipes.length === 0">No recipes yet. Be the first to submit one!</p>
+  </section>
